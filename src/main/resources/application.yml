@@ -1,0 +1,20 @@
+server:
+  port: 8001
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+  application:
+    name: cloud-provider-payment
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/file?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password: 140888
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+upload:
+  path: C:/file/
+

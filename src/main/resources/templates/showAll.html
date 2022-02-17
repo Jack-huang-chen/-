@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <title>文件列表页面</title>
+    <link rel="stylesheet" type="text/css"  th:href="@{/css/bootstrap.min.css}"/>
+    <script  th:src="@{/js/jquery-3.6.0.js}"></script>
+
+
+</head>
+<body style="background-color:#CCCC99">
+
+<table class="table table-striped table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>文件原名</th>
+        <th>文件新名</th>
+        <th>存储路径</th>
+        <th>文件大小</th>
+        <th>文件类型</th>
+        <th>上传时间</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="file,fileStat:${files}">
+        <td><span th:text="${file.id}"/></td>
+        <td><span th:text="${file.oldName}"/></td>
+        <td><span th:text="${file.fileName}"/></td>
+        <td><span th:text="${file.location}"/></td>
+        <td><span th:text="${file.fileSize}"/> kb</td>
+        <td><span th:text="${file.fileContent}"/></td>
+        <td><span th:text="${file.creatTime}"/></td>
+        <td >
+            <a th:href="@{/file/download(id=${file.id})}">Download</a>
+            <a th:href="@{/file/getFileDetail(id=${file.id})}">Detail</a>
+
+        </td>
+    </tr>
+</table>
+<h3 style="text-align: center">文件上传</h3>
+<form enctype="multipart/form-data" method="post" th:action="@{/file/upload}">
+    <input type="file" name="file"/>
+    <input type="submit" value="上传"/>
+</form>
+
+</body>
+</html>
