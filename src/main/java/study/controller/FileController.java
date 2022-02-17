@@ -30,7 +30,7 @@ public class FileController {
     }
 
     /**
-     * 展示所有文件数据
+     * 展示所有文件数据,跳转到主页面
      * @param model
      * @return
      */
@@ -50,6 +50,7 @@ public class FileController {
     @PostMapping("/upload")
     @ResponseBody
     public String upload(@RequestParam("file") MultipartFile file) {
+
         return fileService.save(file);
     }
 
@@ -58,7 +59,7 @@ public class FileController {
      * @param id
      * @param response
      * @return
-     * @throws IOException
+     * @throws
      */
     @GetMapping("download")
     @ResponseBody
