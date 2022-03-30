@@ -12,6 +12,7 @@ public interface FileSystemDao {
      * 保存数据
      * @param fileSystem
      */
+
     void save(FileSystem fileSystem);
 
     /**
@@ -19,11 +20,13 @@ public interface FileSystemDao {
      * @param id
      * @return
      */
+
     FileSystem getFileSystem(String id);
 
     /**
      * 查找全部元数据
      * @return
      */
+
     List<FileSystem> findAllFile();
 }
