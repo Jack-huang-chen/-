@@ -23,6 +23,11 @@ public interface FileSystemDao {
 
     FileSystem getFileSystem(String id);
 
+
+
+
+
+
     /**
      * 查找全部元数据
      * @return
